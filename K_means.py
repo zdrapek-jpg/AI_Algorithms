@@ -3,7 +3,6 @@
      #            ETYKIETY PODAJE JAKO K : A,B,C itd..
      #      DO PIERWSZYCH PUNKTÓW O ILE  K> ILOSC PUNKTÓW
      #i k >1 inaczej przypisuje wszystko do 1 klasy
-
 #       KROKI :
         #1   PRZYPISANIE ETYKIET DO 3 LOSOWYCH PUNKTÓW
         #2   PUNKTY BIORĘ JAKO STAŁE I LICZE DYSTANSE DO KAŻDEGO  PUNKTU Z TYM ŻE PKT SAM DO SIEBIE MA 0 DYSTANS
@@ -18,9 +17,10 @@
 # pętlka rekuręcyjna która powtarza praces liczenia algorytmu
 
 from math import sqrt
-
+from matplotlib import pyplot as plt
 import Tests_Kmeans
 from Tests_Kmeans import Tests
+
 
 
 # metryka licząca dystanse między centrum a każdym punktem w uniwersum
@@ -65,7 +65,7 @@ def draw_with_etykiets_data_points(groups,centers):  #  data[[x,y....],[],[],[],
     #   [13, 22], [14, 25], [15, 20], [16, 24], [17, 20], [18, 20], [19, 16], [20, 16], [21, 14], [22, 17], [23, 15],
     #   [24, 16], [25, 16], [26, 12], [27, 18], [28, 14], [29, 20], [30, 16], [31, 15]],
     #  [[1, 13, 'A'], [2, 12, 'B'], [17, 13, 'C']])
-    from matplotlib import pyplot as plt
+
     if len(groups)!= len(centers):
         raise Exception(f"One of data is not long enought len(groups)!=len(centers) ,{len(groups)}!={len(centers)} ")
     fig,ax = plt.subplots()
@@ -121,19 +121,18 @@ def initilaize_Kmenas(Data,k,Etykiety,i=0,cluster_center=None,groups_before= Non
 
     heads += 1
     flag1 = Tests.continuation_conditions_centers(Data_etyk, new_centers) #if true wszystko spełnione zatrzymujemy
+    flag2= False
     print(f"flag for centers:{flag1} ")
-    # if heads >=2:
-    #     flag1 = Tests.continuation_conditions_groups(groups_before, groups) # if true zatrzymujmey
-    #     print(f"flag for groups: {flag1}")
+    if heads >=2:
+         flag2 = Tests.continuation_conditions_groups(groups_before, groups) # if true zatrzymujmey
+         print(f"flag for groups: {flag1}")
     print(f"before : {Data_etyk} after:{new_centers}")
     ### petla do poprawy
     # for i in range(len(Data_etyk)):
     #     if not flag2 and not flag1:
     #        if heads <=16:
     #             return initilaize_Kmenas(Data, k,Etykiety, cluster_center=new_centers,groups_before=groups)
-
-    if not flag1 and heads <= 16:
+    if not flag2 and  not flag1 and heads <= 16:
         return initilaize_Kmenas(Data, k, Etykiety, cluster_center=new_centers, groups_before=groups)
-    print(Data_etyk,new_centers)
     draw_with_etykiets_data_points(groups,new_centers)
     return Data,new_centers,groups

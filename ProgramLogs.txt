@@ -1,0 +1,269 @@
+2024-11-19 11:41:14,205 - ERROR - Element type is not a list: <class 'tuple'>  ID: 1
+2024-11-19 11:41:14,205 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 39, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mObject type error  with: [91mObject type supposed to be a list, not <class 'tuple'> , 
+ at index : 2
+2024-11-19 11:41:14,205 - ERROR - Test instance 1 failed data_errors: [93mObject type error  with: [91mObject type supposed to be a list, not <class 'tuple'> , 
+ at index : 2
+2024-11-19 11:41:14,205 - ERROR - Inconsistent data lengths: 4 != 5  ID: 2
+2024-11-19 11:41:14,205 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 47, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mDifferent length  with: [91mObjects with 4 != 5 , 
+ at index : 1 and 0
+2024-11-19 11:41:14,206 - ERROR - Test instance 2 failed data_errors: [93mDifferent length  with: [91mObjects with 4 != 5 , 
+ at index : 1 and 0
+2024-11-19 11:41:14,206 - ERROR - Invalid element types in data: ['2', 3, 4, 5]   ID: 3
+2024-11-19 11:41:14,206 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 55, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:41:14,206 - ERROR - Test instance 3 failed data_errors: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:41:14,206 - ERROR - Invalid element types in data: ['2', 3, 4, 5]   ID: 4
+2024-11-19 11:41:14,206 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 55, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:41:14,206 - ERROR - Test instance 4 failed data_errors: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:41:14,206 - WARNING - Centers have inconsistent lengths.
+2024-11-19 11:41:14,206 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:14,206 - WARNING - Previous and current centers have different lengths.
+2024-11-19 11:41:14,206 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:14,206 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:14,208 - ERROR - Error in continuation condition groups test 0: 'int' object is not iterable
+2024-11-19 11:41:14,208 - ERROR - Element type is not a list: <class 'tuple'>  ID: 1
+2024-11-19 11:41:14,208 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 39, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mObject type error  with: [91mObject type supposed to be a list, not <class 'tuple'> , 
+ at index : 2
+2024-11-19 11:41:14,208 - ERROR - Test instance 1 failed data_errors: [93mObject type error  with: [91mObject type supposed to be a list, not <class 'tuple'> , 
+ at index : 2
+2024-11-19 11:41:14,208 - ERROR - Inconsistent data lengths: 4 != 5  ID: 2
+2024-11-19 11:41:14,208 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 47, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mDifferent length  with: [91mObjects with 4 != 5 , 
+ at index : 1 and 0
+2024-11-19 11:41:14,208 - ERROR - Test instance 2 failed data_errors: [93mDifferent length  with: [91mObjects with 4 != 5 , 
+ at index : 1 and 0
+2024-11-19 11:41:14,208 - ERROR - Invalid element types in data: ['2', 3, 4, 5]   ID: 3
+2024-11-19 11:41:14,208 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 55, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:41:14,209 - ERROR - Test instance 3 failed data_errors: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:41:14,209 - ERROR - Invalid element types in data: ['2', 3, 4, 5]   ID: 4
+2024-11-19 11:41:14,209 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 55, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:41:14,209 - ERROR - Test instance 4 failed data_errors: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:41:14,209 - WARNING - Centers have inconsistent lengths.
+2024-11-19 11:41:14,209 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:14,209 - WARNING - Previous and current centers have different lengths.
+2024-11-19 11:41:14,209 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:14,209 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:14,209 - ERROR - Error in continuation condition groups test 0: 'int' object is not iterable
+2024-11-19 11:41:15,792 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:16,662 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:17,371 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:18,187 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:18,979 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:19,802 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:20,586 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:48,367 - ERROR - Element type is not a list: <class 'tuple'>  ID: 1
+2024-11-19 11:41:48,368 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 39, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mObject type error  with: [91mObject type supposed to be a list, not <class 'tuple'> , 
+ at index : 2
+2024-11-19 11:41:48,368 - ERROR - Test instance 1 failed data_errors: [93mObject type error  with: [91mObject type supposed to be a list, not <class 'tuple'> , 
+ at index : 2
+2024-11-19 11:41:48,368 - ERROR - Inconsistent data lengths: 4 != 5  ID: 2
+2024-11-19 11:41:48,368 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 47, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mDifferent length  with: [91mObjects with 4 != 5 , 
+ at index : 1 and 0
+2024-11-19 11:41:48,369 - ERROR - Test instance 2 failed data_errors: [93mDifferent length  with: [91mObjects with 4 != 5 , 
+ at index : 1 and 0
+2024-11-19 11:41:48,369 - ERROR - Invalid element types in data: ['2', 3, 4, 5]   ID: 3
+2024-11-19 11:41:48,369 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 55, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:41:48,369 - ERROR - Test instance 3 failed data_errors: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:41:48,369 - ERROR - Invalid element types in data: ['2', 3, 4, 5]   ID: 4
+2024-11-19 11:41:48,369 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 55, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:41:48,369 - ERROR - Test instance 4 failed data_errors: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:41:48,369 - WARNING - Centers have inconsistent lengths.
+2024-11-19 11:41:48,369 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:48,369 - WARNING - Previous and current centers have different lengths.
+2024-11-19 11:41:48,369 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:48,370 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:48,372 - ERROR - Error in continuation condition groups test 0: 'int' object is not iterable
+2024-11-19 11:41:48,372 - ERROR - Element type is not a list: <class 'tuple'>  ID: 1
+2024-11-19 11:41:48,372 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 39, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mObject type error  with: [91mObject type supposed to be a list, not <class 'tuple'> , 
+ at index : 2
+2024-11-19 11:41:48,372 - ERROR - Test instance 1 failed data_errors: [93mObject type error  with: [91mObject type supposed to be a list, not <class 'tuple'> , 
+ at index : 2
+2024-11-19 11:41:48,372 - ERROR - Inconsistent data lengths: 4 != 5  ID: 2
+2024-11-19 11:41:48,372 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 47, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mDifferent length  with: [91mObjects with 4 != 5 , 
+ at index : 1 and 0
+2024-11-19 11:41:48,372 - ERROR - Test instance 2 failed data_errors: [93mDifferent length  with: [91mObjects with 4 != 5 , 
+ at index : 1 and 0
+2024-11-19 11:41:48,372 - ERROR - Invalid element types in data: ['2', 3, 4, 5]   ID: 3
+2024-11-19 11:41:48,372 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 55, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:41:48,373 - ERROR - Test instance 3 failed data_errors: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:41:48,373 - ERROR - Invalid element types in data: ['2', 3, 4, 5]   ID: 4
+2024-11-19 11:41:48,373 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 55, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:41:48,373 - ERROR - Test instance 4 failed data_errors: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:41:48,373 - WARNING - Centers have inconsistent lengths.
+2024-11-19 11:41:48,373 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:48,373 - WARNING - Previous and current centers have different lengths.
+2024-11-19 11:41:48,373 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:48,373 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:48,375 - ERROR - Error in continuation condition groups test 0: 'int' object is not iterable
+2024-11-19 11:41:50,136 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:50,763 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:51,318 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:51,906 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:52,530 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:53,139 - WARNING - Mismatch in center lengths.
+2024-11-19 11:41:53,697 - WARNING - Mismatch in center lengths.
+2024-11-19 11:45:43,961 - ERROR - Element type is not a list: <class 'tuple'>  ID: 1
+2024-11-19 11:45:43,961 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 39, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mObject type error  with: [91mObject type supposed to be a list, not <class 'tuple'> , 
+ at index : 2
+2024-11-19 11:45:43,962 - ERROR - Test instance 1 failed data_errors: [93mObject type error  with: [91mObject type supposed to be a list, not <class 'tuple'> , 
+ at index : 2
+2024-11-19 11:45:43,962 - ERROR - Inconsistent data lengths: 4 != 5  ID: 2
+2024-11-19 11:45:43,962 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 47, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mDifferent length  with: [91mObjects with 4 != 5 , 
+ at index : 1 and 0
+2024-11-19 11:45:43,962 - ERROR - Test instance 2 failed data_errors: [93mDifferent length  with: [91mObjects with 4 != 5 , 
+ at index : 1 and 0
+2024-11-19 11:45:43,962 - ERROR - Invalid element types in data: ['2', 3, 4, 5]   ID: 3
+2024-11-19 11:45:43,962 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 55, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:45:43,962 - ERROR - Test instance 3 failed data_errors: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:45:43,962 - ERROR - Invalid element types in data: ['2', 3, 4, 5]   ID: 4
+2024-11-19 11:45:43,962 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 55, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:45:43,962 - ERROR - Test instance 4 failed data_errors: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:45:43,962 - WARNING - Centers have inconsistent lengths.
+2024-11-19 11:45:43,962 - WARNING - Mismatch in center lengths.
+2024-11-19 11:45:43,963 - WARNING - Previous and current centers have different lengths.
+2024-11-19 11:45:43,963 - WARNING - Mismatch in center lengths.
+2024-11-19 11:45:43,963 - WARNING - Mismatch in center lengths.
+2024-11-19 11:45:43,964 - ERROR - Error in continuation condition groups test 0: 'int' object is not iterable
+2024-11-19 11:45:43,964 - ERROR - Element type is not a list: <class 'tuple'>  ID: 1
+2024-11-19 11:45:43,964 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 39, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mObject type error  with: [91mObject type supposed to be a list, not <class 'tuple'> , 
+ at index : 2
+2024-11-19 11:45:43,964 - ERROR - Test instance 1 failed data_errors: [93mObject type error  with: [91mObject type supposed to be a list, not <class 'tuple'> , 
+ at index : 2
+2024-11-19 11:45:43,965 - ERROR - Inconsistent data lengths: 4 != 5  ID: 2
+2024-11-19 11:45:43,965 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 47, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mDifferent length  with: [91mObjects with 4 != 5 , 
+ at index : 1 and 0
+2024-11-19 11:45:43,966 - ERROR - Test instance 2 failed data_errors: [93mDifferent length  with: [91mObjects with 4 != 5 , 
+ at index : 1 and 0
+2024-11-19 11:45:43,966 - ERROR - Invalid element types in data: ['2', 3, 4, 5]   ID: 3
+2024-11-19 11:45:43,966 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 55, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:45:43,966 - ERROR - Test instance 3 failed data_errors: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:45:43,966 - ERROR - Invalid element types in data: ['2', 3, 4, 5]   ID: 4
+2024-11-19 11:45:43,966 - ERROR - Exception in data_errors.
+Traceback (most recent call last):
+  File "C:\Program Files\Pulpit\Projekt_Python\K_means\Tests_Kmeans.py", line 55, in data_errors
+    raise TestKmeans_data(
+Tests_Kmeans.TestKmeans_data: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:45:43,966 - ERROR - Test instance 4 failed data_errors: [93mWrong type  with: [91mError occurred for: ['2', 3, 4, 5], all numbers must be int or float , 
+ at index : 1
+2024-11-19 11:45:43,966 - WARNING - Centers have inconsistent lengths.
+2024-11-19 11:45:43,966 - WARNING - Mismatch in center lengths.
+2024-11-19 11:45:43,966 - WARNING - Previous and current centers have different lengths.
+2024-11-19 11:45:43,966 - WARNING - Mismatch in center lengths.
+2024-11-19 11:45:43,966 - WARNING - Mismatch in center lengths.
+2024-11-19 11:45:43,967 - ERROR - Error in continuation condition groups test 0: 'int' object is not iterable
+2024-11-19 11:45:46,136 - WARNING - Mismatch in center lengths.
+2024-11-19 11:45:49,824 - WARNING - Mismatch in center lengths.
+2024-11-19 11:56:23,161 - WARNING - Mismatch in center lengths.
