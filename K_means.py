@@ -21,18 +21,16 @@ from matplotlib import pyplot as plt
 import Tests_Kmeans
 from Tests_Kmeans import Tests
 
-
-
 # metryka licząca dystanse między centrum a każdym punktem w uniwersum
-def sumy_odwrotnosci_metryka(added_point, distance_data):
+def sumy_odwrotnosci_metryka(added_point, distance_data): # x1(2,4,4,3)  A(4,6,5,6)
     if len(added_point)!= len(distance_data):
         raise  Exception(f"nieodpowiednie dystane dla punktów miedzy sobą {len(added_point)}, {len(distance_data)} ")
     suma = [(e1-e2)**2 for e1,e2 in zip(added_point,distance_data)]
     #return  Pierwiastek (suma (dla 2 listy między sobą))
-    return round(sqrt(sum(suma)),4)
+    return round(sqrt(sum(suma)),4) # 5.322245
 
 #przypisanie punktu etykiety centrum
-def get_centers(one_data,Etykieta,i=0):
+def get_centers(one_data,Etykieta,i=0):  # (2,3)  "A"  - >   (2,3,"A")
     return list(one_data)+[Etykieta]
 # po udanej pierwszej iteracji wyznaczania dystansów wyliczamy nowe centra z punktów przypisanych do poszczegulnych grup
 def new_center_set(Data,etykiety):
@@ -65,7 +63,6 @@ def draw_with_etykiets_data_points(groups,centers):  #  data[[x,y....],[],[],[],
     #   [13, 22], [14, 25], [15, 20], [16, 24], [17, 20], [18, 20], [19, 16], [20, 16], [21, 14], [22, 17], [23, 15],
     #   [24, 16], [25, 16], [26, 12], [27, 18], [28, 14], [29, 20], [30, 16], [31, 15]],
     #  [[1, 13, 'A'], [2, 12, 'B'], [17, 13, 'C']])
-
     if len(groups)!= len(centers):
         raise Exception(f"One of data is not long enought len(groups)!=len(centers) ,{len(groups)}!={len(centers)} ")
     fig,ax = plt.subplots()
@@ -74,11 +71,11 @@ def draw_with_etykiets_data_points(groups,centers):  #  data[[x,y....],[],[],[],
             raise Exception("One of data is incorrect type (string or other")
         x = [point[0] for point in group]
         y = [point[1] for point in group]
-        plt.scatter(x, y,  label=center[-1], s=30)
+        plt.scatter(x, y,  label=center[-1], s=20)
         for i in range(len(x)):
             ax.annotate(center[-1], (x[i], y[i]), textcoords="offset points", xytext=(0, 4), ha='center')
 
-        plt.scatter(center[0],center[1],marker="*",label= center[-1],s=100)
+        plt.scatter(center[0],center[1],marker="*",label= center[-1],s=10)
     plt.grid()
     plt.show()
 
@@ -87,6 +84,7 @@ def initilaize_Kmenas(Data,k,Etykiety,i=0,cluster_center=None,groups_before= Non
     global heads
     if  k==1:
         return   [x+[Etykiety[i]] for x in Data[1:]]
+
     else:
         Data_etyk = []
         groups= []
@@ -120,7 +118,7 @@ def initilaize_Kmenas(Data,k,Etykiety,i=0,cluster_center=None,groups_before= Non
     new_centers = new_center_set(groups,Data_etyk)
 
     heads += 1
-    flag1 = Tests.continuation_conditions_centers(Data_etyk, new_centers) #if true wszystko spełnione zatrzymujemy
+    flag1 = Tests.continuation_conditions_centers(Data_etyk, new_centers) #if true wszystko spełnione zatrzymujemy algorytm
     flag2= False
     print(f"flag for centers:{flag1} ")
     if heads >=2:
@@ -136,3 +134,12 @@ def initilaize_Kmenas(Data,k,Etykiety,i=0,cluster_center=None,groups_before= Non
         return initilaize_Kmenas(Data, k, Etykiety, cluster_center=new_centers, groups_before=groups)
     draw_with_etykiets_data_points(groups,new_centers)
     return Data,new_centers,groups
+# import pandas as pd
+# data = pd.read_csv("Airbnb listings in Ottawa (May 2016).csv")
+# data_cords = data.loc[: , ['latitude','longitude']]
+# coords_list = data_cords.values.tolist()
+# x =Tests_Kmeans.Tests(coords_list[:],["A","B","C","D","E"],7)
+# x.data_errors()
+# x.labels_K_errors()
+#
+# initilaize_Kmenas(coords_list[:],7,Etykiety=["A","B","C","D","E"])

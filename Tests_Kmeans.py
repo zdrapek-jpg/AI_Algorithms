@@ -1,11 +1,14 @@
 import logging
 from typing import List, Any
-
 logging.basicConfig(
     filename="ProgramLogs.txt",
-    level=logging.WARNING,
+    level=logging.DEBUG,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
+with open("ProgramLogs.txt", "w") as file:
+    file.write(" ")
+
+
 class Tests():
     errors_list = []
 
@@ -82,6 +85,16 @@ class Tests():
                 logging.error("k is larger than the number of labels: k=%d, labels=%d   ID: %d",
                               self.k,
                               len(self.labels_points),
+                              self.i)
+                raise TestKmeans_area(
+                    "k count of clusters must be less than or equal to the labels you provide",
+                    f"{self.k},{len(self.labels_points)}"
+                )
+            if self.k > len(self.Data) or len(self.labels_points)>len(self.Data):
+                logging.error("k is larger  or equal to number of labels and less than data: k=%d, labels=%d data=%d   ID: %d",
+                              self.k,
+                              len(self.labels_points),
+                              len(self.Data),
                               self.i)
                 raise TestKmeans_area(
                     "k count of clusters must be less than or equal to the labels you provide",

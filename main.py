@@ -2,9 +2,10 @@ import K_means
 import Tests_Kmeans
 from Tests_Kmeans import Tests
 import string
+import logging
 import time
 Etykiety = [x for x in string.ascii_uppercase]
-Data1 = [ ["cena",'zniżka'],
+Data1 = [ ["cena",'zniżka','awokado','majonez'],
  [1, 13, 20, 41],
  [2, 12, 19, 72],
  [3, 12, 21, 7],
@@ -37,14 +38,13 @@ Data1 = [ ["cena",'zniżka'],
  [30, 16, 18, 25],
  [31, 15, 21, 23]]
 Data2 = [["cena",'zniżka'],
-        [1, 13],
-        [2, 12],
+        [17, 13],
+        [21, 25],
         [3, 12],
         [4, 12],
         [5, 10],
         [6, 10],
-        [7, 11],
-        [8, 1],
+        [7, 11], [8, 1],
         [9, 5],
         [10, 5],
         [11, 0],
@@ -69,10 +69,18 @@ Data2 = [["cena",'zniżka'],
         [30, 16],
         [31, 15],
         [30,30],
-        [19,21]
+        [19,21],
+         [20,22],
+         [21,19]
 ]
 
+logging.getLogger('matplotlib').setLevel(logging.WARNING)
 
+Tests_main = Tests_Kmeans.Tests(Data2[1:],Etykiety,4)
+Tests_main.data_errors()
+Tests_main.labels_K_errors()
+import pyperclip
+print(K_means.initilaize_Kmenas(Data2[1:],3,Etykiety))
 
 datasets = [
         [[2, 3, 4, 5], [2, 3, 4, 5], [2, 3, 4, 58]],  # Valid data
@@ -181,11 +189,6 @@ if __name__ == "__main__":
 
 
 # właściwa klasa dla programu :
-Tests_main = Tests_Kmeans.Tests(Data2[1:],Etykiety,5)
-Tests_main.data_errors()
-Tests_main.labels_K_errors()
-
-K_means.initilaize_Kmenas(Data2[1:],5,Etykiety)
 #Dane:
 #Inicjalizacja testów przekazanie danych do klasy testującej gdzie dane są niepoprawne
 # x1 =Tests_Kmeans.Tests([[2,3,4,5],[2,3,4,5],[2,3,4,58]],Etykiety,3)
@@ -212,3 +215,5 @@ K_means.initilaize_Kmenas(Data2[1:],5,Etykiety)
 #                                                          [[2, 3, "A"], [6, 2, "B"], [5, 7, "C"]]))
 # print(Tests_Kmeans.Tests.continuation_conditions_centers([[5, 3, "A"], [4, 5, "B"], [2, 3, "C"]],
 #                                                          [[2, 4, "A"], [6, 2, "B"], [5, 7, "C"]]))
+
+
