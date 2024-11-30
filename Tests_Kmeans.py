@@ -148,7 +148,7 @@ class Tests():
         # sprawdzamy czy jest więszky od warotści
         print(f"{mean_absolute_error} < {0.50} and {True} and {same/len(current_centers)}>=1")
         logging.debug(f" conditons result: {mean_absolute_error} < {0.50} and {True} and {same/len(current_centers)}>=1")
-        return (mean_absolute_error < 0.39 and True) and same/len(current_centers)>=1   #kontynuujemy jeśli błąd jest mniejszy od 0.39 albo żadne z powyższych nie zwruciły inaczej
+        return (mean_absolute_error < 0.15 and True) and same/len(current_centers)>=1   #kontynuujemy jeśli błąd jest mniejszy od 0.39 albo żadne z powyższych nie zwruciły inaczej
         #
         #([[1, 13], [2, 12], [3, 12], [4, 12], [5, 10], [6, 10], [7, -11], [8, 1], [9, 5], [10, -5], [11, 0], [12, 11.3],
         #   [13, 22], [14, 25], [15, 20], [16, 24], [17, 20], [18, 20], [19, 16], [20, 16], [21, 14], [22, 17], [23, 15],

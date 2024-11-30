@@ -1,9 +1,8 @@
 import K_means
-import Tests_Kmeans
-from Tests_Kmeans import Tests
+
 import string
 import logging
-import time
+
 Etykiety = [x for x in string.ascii_uppercase]
 Data1 = [ ["cena",'zniżka','awokado','majonez'],
  [1, 13, 20, 41],
@@ -41,7 +40,7 @@ Data2 = [["cena",'zniżka'],
         [17, 13],
         [21, 25],
         [3, 12],
-        [4, 12],
+        [14.3, 6.9],
         [5, 10],
         [6, 10],
         [7, 11], [8, 1],
@@ -71,16 +70,20 @@ Data2 = [["cena",'zniżka'],
         [30,30],
         [19,21],
          [20,22],
-         [21,19]
+         [21,19],
+         [12,12],
+         [10.5,32],
+         [16.2,14.2],
+         [10.2,14.7]
 ]
 
 logging.getLogger('matplotlib').setLevel(logging.WARNING)
 
-Tests_main = Tests_Kmeans.Tests(Data2[1:],Etykiety,4)
-Tests_main.data_errors()
-Tests_main.labels_K_errors()
-import pyperclip
-print(K_means.initilaize_Kmenas(Data2[1:],3,Etykiety))
+# Tests_main = Tests_Kmeans.Tests(Data2[1:],Etykiety,4)
+# Tests_main.data_errors()
+# Tests_main.labels_K_errors()
+K_means.initilaize_Kmenas(Data2[1:], 4, Etykiety)
+
 
 datasets = [
         [[2, 3, 4, 5], [2, 3, 4, 5], [2, 3, 4, 58]],  # Valid data

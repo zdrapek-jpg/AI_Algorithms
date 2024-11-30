@@ -7,7 +7,7 @@
         #1   PRZYPISANIE ETYKIET DO 3 LOSOWYCH PUNKTÓW
         #2   PUNKTY BIORĘ JAKO STAŁE I LICZE DYSTANSE DO KAŻDEGO  PUNKTU Z TYM ŻE PKT SAM DO SIEBIE MA 0 DYSTANS
         #3    klasa 1 [0[] 1[],2[]] , klasa 2 [ 0[] 1[],2[]]  DYSTANSE,  biorę minimum
-
+import random
 # będzie jedna etykieta dla wszystkich punktów
 # przypisanie etykiet do grup :
 # jak zapisać etykietę  na krotce? -1 jest etykietą i lista obiektów jest jako lista klastrów poszczegulnych klas po kolei
@@ -31,7 +31,7 @@ def sumy_odwrotnosci_metryka(added_point, distance_data): # x1(2,4,4,3)  A(4,6,5
 
 #przypisanie punktu etykiety centrum
 def get_centers(one_data,Etykieta,i=0):  # (2,3)  "A"  - >   (2,3,"A")
-    return list(one_data)+[Etykieta]
+    return list(one_data[0])+[Etykieta]
 # po udanej pierwszej iteracji wyznaczania dystansów wyliczamy nowe centra z punktów przypisanych do poszczegulnych grup
 def new_center_set(Data,etykiety):
     etykiety = [x[:][-1] for x in etykiety]
@@ -54,15 +54,53 @@ def new_center_set(Data,etykiety):
       # Grupy są stabilne, można zakończyć algorytm, nic się nie zmineiło
 # check if point for labels are the same
 # sprawdzamy czy punkty mają te same współrzędne co inny punkt zwracamy wtedy error  else: kontynuujemy
+import numpy as np
+import numpy as np
+import matplotlib.pyplot as plt
 
 
+def sumy_odwrotnosci_metryka_np(added_point, distance_data):
+    # Ensure both added_point and distance_data are numeric
+    added_point = np.array(added_point, dtype=float)
+    distance_data = np.array(distance_data, dtype=float)
 
+    # Calculate the squared differences and sum them
+    suma = np.sum((added_point - distance_data) ** 2)
+    return suma
+def extra_Draw(Data, centers, groups, Etykiety, k,h):
+    cords = np.array(Data)
+    centers = np.array(centers)
+    centroids = centers[:, :2].astype(float)
+
+    x_min, x_max = cords[:, 0].min()-h , cords[:, 0].max()+h
+    y_min, y_max = cords[:, 1].min()-h , cords[:, 1].max()+h
+    h = 0.3  # Grid resolution
+    xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
+
+    # Calculate decision boundary: assign each point in the grid to the nearest centroid
+    Z = np.array([
+        np.argmin([sumy_odwrotnosci_metryka_np(center[:-1], [x, y]) for center in centers])
+        for x, y in np.c_[xx.ravel(), yy.ravel()]
+    ])
+    Z = Z.reshape(xx.shape)
+
+    # Plot the decision boundary
+    plt.imshow(Z, interpolation='nearest', extent=(xx.min(), xx.max(), yy.min(), yy.max()),
+               cmap=plt.cm.Pastel1, origin='lower')
+
+    # Plot data points for each cluster
+    for idx, group in enumerate(groups):
+        points = np.array(group)
+        plt.scatter(points[:, 0], points[:, 1],s=10,label =Etykiety[idx])
+    plt.scatter(centroids[:, 0], centroids[:, 1], marker="*",s=10)
+    plt.grid()
+    plt.show()
 # rysowanie punktów w przestrzeni 2 wymiarowej
 def draw_with_etykiets_data_points(groups,centers):  #  data[[x,y....],[],[],[],], centers[[X,Y,...,A],[X,Y,....,B],[X,Y,....,C]]
-    # ([[1, 13], [2, 12], [3, 12], [4, 12], [5, 10], [6, 10], [7, -11], [8, 1], [9, 5], [10, -5], [11, 0], [12, 11.3],
+    # [[1, 13], [2, 12], [3, 12], [4, 12], [5, 10], [6, 10], [7, -11], [8, 1], [9, 5], [10, -5], [11, 0], [12, 11.3],
     #   [13, 22], [14, 25], [15, 20], [16, 24], [17, 20], [18, 20], [19, 16], [20, 16], [21, 14], [22, 17], [23, 15],
     #   [24, 16], [25, 16], [26, 12], [27, 18], [28, 14], [29, 20], [30, 16], [31, 15]],
-    #  [[1, 13, 'A'], [2, 12, 'B'], [17, 13, 'C']])
+    #  [[1, 13, 'A'], [2, 12, 'B'], [17, 13, 'C']]
     if len(groups)!= len(centers):
         raise Exception(f"One of data is not long enought len(groups)!=len(centers) ,{len(groups)}!={len(centers)} ")
     fig,ax = plt.subplots()
@@ -92,7 +130,7 @@ def initilaize_Kmenas(Data,k,Etykiety,i=0,cluster_center=None,groups_before= Non
             cluster_center=[]
             for index in range(k):
                 # Calculate center for each cluster and add to Data_etyk
-                cluster_center = get_centers(Data[index], Etykiety[index])
+                cluster_center = get_centers(random.sample(Data,1), Etykiety[index])
                 Data_etyk.append(cluster_center)
                 groups.append([])
 
@@ -130,16 +168,8 @@ def initilaize_Kmenas(Data,k,Etykiety,i=0,cluster_center=None,groups_before= Non
     #     if not flag2 and not flag1:
     #        if heads <=16:
     #             return initilaize_Kmenas(Data, k,Etykiety, cluster_center=new_centers,groups_before=groups)
-    if not flag2 and  not flag1 and heads <= 16:
+    if not flag2 and  not flag1 and heads <= 20:
         return initilaize_Kmenas(Data, k, Etykiety, cluster_center=new_centers, groups_before=groups)
-    draw_with_etykiets_data_points(groups,new_centers)
-    return Data,new_centers,groups
-# import pandas as pd
-# data = pd.read_csv("Airbnb listings in Ottawa (May 2016).csv")
-# data_cords = data.loc[: , ['latitude','longitude']]
-# coords_list = data_cords.values.tolist()
-# x =Tests_Kmeans.Tests(coords_list[:],["A","B","C","D","E"],7)
-# x.data_errors()
-# x.labels_K_errors()
-#
-# initilaize_Kmenas(coords_list[:],7,Etykiety=["A","B","C","D","E"])
+    extra_Draw(Data,new_centers,groups,Etykiety,k,h=0.3)
+    return Data,new_centers,groups,Etykiety,k
+
