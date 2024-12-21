@@ -28,16 +28,3 @@ def standaryzacja_data(data,flag = True):
 
 print(standaryzacja_data(data))
 
-#min_x ,max_x   ,  liczę xi = (x -x_min)/(x_max - x_min)
-def normalizacja(data):
-    min_x = data[0]
-    max_x = data[1]
-    for x in data:
-        if x< min_x:
-            min_x=x
-        elif x>max_x:
-            max_x=x
-    data_normalized = [round((x-min_x)/(max_x-min_x),4) for x in data]
-    return data_normalized
-
-print(normalizacja(data))

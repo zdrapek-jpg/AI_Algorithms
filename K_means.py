@@ -68,13 +68,14 @@ def sumy_odwrotnosci_metryka_np(added_point, distance_data):
     suma = np.sum((added_point - distance_data) ** 2)
     return suma
 def extra_Draw(Data, centers, groups, Etykiety, k,h):
+    if h ==None:
+        h = 0.1
     cords = np.array(Data)
     centers = np.array(centers)
     centroids = centers[:, :2].astype(float)
 
     x_min, x_max = cords[:, 0].min()-h , cords[:, 0].max()+h
     y_min, y_max = cords[:, 1].min()-h , cords[:, 1].max()+h
-    h = 0.3  # Grid resolution
     xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
 
     # Calculate decision boundary: assign each point in the grid to the nearest centroid
@@ -118,7 +119,7 @@ def draw_with_etykiets_data_points(groups,centers):  #  data[[x,y....],[],[],[],
     plt.show()
 
 heads = 0
-def initilaize_Kmenas(Data,k,Etykiety,i=0,cluster_center=None,groups_before= None):
+def initilaize_Kmenas(Data,k,Etykiety,i=0,h=None,cluster_center=None,groups_before= None):
     global heads
     if  k==1:
         return   [x+[Etykiety[i]] for x in Data[1:]]
@@ -152,7 +153,7 @@ def initilaize_Kmenas(Data,k,Etykiety,i=0,cluster_center=None,groups_before= Non
             index = distance_for_current_center.index(min_distance_point)
             groups[index].append(tp)
 
-    draw_with_etykiets_data_points(groups,Data_etyk)
+    #draw_with_etykiets_data_points(groups,Data_etyk)
     new_centers = new_center_set(groups,Data_etyk)
 
     heads += 1
@@ -169,7 +170,7 @@ def initilaize_Kmenas(Data,k,Etykiety,i=0,cluster_center=None,groups_before= Non
     #        if heads <=16:
     #             return initilaize_Kmenas(Data, k,Etykiety, cluster_center=new_centers,groups_before=groups)
     if not flag2 and  not flag1 and heads <= 20:
-        return initilaize_Kmenas(Data, k, Etykiety, cluster_center=new_centers, groups_before=groups)
-    extra_Draw(Data,new_centers,groups,Etykiety,k,h=0.3)
+        return initilaize_Kmenas(Data, k, Etykiety,h=h, cluster_center=new_centers, groups_before=groups)
+    extra_Draw(Data,new_centers,groups,Etykiety,k,h)
     return Data,new_centers,groups,Etykiety,k
 

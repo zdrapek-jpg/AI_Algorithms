@@ -39,7 +39,7 @@ Data1 = [ ["cena",'zniżka','awokado','majonez'],
  [29, 20, 17, 9],
  [30, 16, 18, 25],
  [31, 15, 21, 23]]
-Data2 = [["cena",'zniżka'],
+Data2 = [["grozność",'wielkość'],
         [17, 13],
         [21, 25],
         [3, 12],
@@ -81,18 +81,28 @@ Data2 = [["cena",'zniżka'],
 ]
 
 
-#
+# # przekład na prostych danych  wpisywanych ręcznie
 # Tests_main = Tests_Kmeans.Tests(Data2[1:],Etykiety,4)
 # Tests_main.data_errors()
 # Tests_main.labels_K_errors()
-K_means.initilaize_Kmenas(Data2[1:], 4, Etykiety)
-
-
+# K_means.initilaize_Kmenas(Data2[1:], 4, Etykiety)
 #
+#
+# # przykładowe dane dla współrzędnych geograficznych danych rozrzuconych sklepów
 # import pandas as pd
 # data = pd.read_csv("Airbnb listings in Ottawa (May 2016).csv")
 # data_cords = data.loc[: , ['latitude','longitude']]
 # coords_list = data_cords.values.tolist()
 # #
 # K_means.initilaize_Kmenas(coords_list[:], 3, Etykiety=["A", "B", "C", "D", "E"])
-print(random.sample(Data2,1))
+# print(random.sample(Data2,1))
+
+
+# # przekład na dnaych irysów na danych 2 wymiarowych po to aby była możliwość narysowania wykresów
+import pandas as pd
+data_irys = pd.read_csv("iris_orig.csv")
+cords_ = data_irys.iloc[:,0:2]
+cords_ = cords_.values.tolist()
+K_means.initilaize_Kmenas(cords_,3,Etykiety,h=0.01)
+
+
