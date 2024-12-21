@@ -153,7 +153,7 @@ def initilaize_Kmenas(Data,k,Etykiety,i=0,h=None,cluster_center=None,groups_befo
             index = distance_for_current_center.index(min_distance_point)
             groups[index].append(tp)
 
-    #draw_with_etykiets_data_points(groups,Data_etyk)
+    draw_with_etykiets_data_points(groups,Data_etyk)
     new_centers = new_center_set(groups,Data_etyk)
 
     heads += 1
